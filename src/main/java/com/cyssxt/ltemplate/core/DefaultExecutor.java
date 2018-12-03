@@ -20,4 +20,10 @@ public class DefaultExecutor implements Executor {
     }
     return template.toString();
   }
+
+  @Override
+  public Executor getInstance() {
+    return new DefaultExecutor();
+  }
+
 }
