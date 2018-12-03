@@ -14,10 +14,8 @@ public class TemplateTest {
   public static void main(String[] args) {
     //
     Map<String,Object> params = new HashMap<>();
-    params.put("bbb","1");
-    Template template = new DefaultTemplate("select * from aaa where {if bbb} 1=1 {/if}",params);
-    List<Rule> rules = new ArrayList<>();
-    rules.add(new IfRule());
-    new DefaultExecutor().execute(template,rules);
+    params.put("bbb","0");
+    String value  = DefaultExecutor.execute("select * from aaa where {if bbb} 1=:bbb {/if}",params);
+    System.out.println(value);
   }
 }

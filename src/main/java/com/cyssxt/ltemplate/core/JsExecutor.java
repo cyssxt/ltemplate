@@ -8,7 +8,7 @@ public class JsExecutor {
   final static ScriptEngineManager manager = new ScriptEngineManager();
   final static ScriptEngine engine = manager.getEngineByName("javascript");
   public static Boolean evalBoolean(String path) throws ScriptException {
-    return (Boolean) engine.eval(path);
+    return (Boolean) engine.eval(String.format("Boolean(%s)",path));
   }
 
   public static String getJsValue(Object value){

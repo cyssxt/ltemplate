@@ -25,6 +25,9 @@ public class DefaultTemplate implements Template {
     List<Expression> expressions = new ArrayList<>();
     for(Rule rule:rules){
       Expression expression = rule.calc(this);
+      if(expression==null){
+        continue;
+      }
       expressions.add(expression);
     }
     return expressions;
@@ -68,6 +71,11 @@ public class DefaultTemplate implements Template {
   @Override
   public String getKeyValue(Object value) {
     return String.format("''",value);
+  }
+
+  @Override
+  public String getContent() {
+    return this.content;
   }
 
   public static void main(String[] args) {

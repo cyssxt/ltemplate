@@ -5,7 +5,7 @@ public class IfInfo extends BaseInfo {
 
   private String condition;
 
-  public IfInfo(String id,String value, String condition, String old) {
+  public IfInfo(String id,String condition,String value,  String old) {
     super(id,old,value);
     this.condition = condition;
   }

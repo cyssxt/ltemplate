@@ -19,7 +19,7 @@ public class IfRule implements Rule{
 
   @Override
   public Expression calc(Template template) {
-    String content = template.toString();
+    String content = template.getContent();
     Matcher matcher = getReg().matcher(content);
     while (matcher.find()){
       String old = matcher.group(0);
@@ -37,7 +37,7 @@ public class IfRule implements Rule{
 
   public static void main(String[] args) {
     //
-    Matcher matcher = Pattern.compile("\\{if ([a-z0-9]+)\\}([^{}]+)\\{/if\\}").matcher("{if aa}111{/if}");
+    Matcher matcher = Pattern.compile("\\{if ([a-z0-9]+)\\}([^{}]+)\\{/if\\}").matcher("select * from aaa where {if bbb} 1=:bbb {/if}");
     if(matcher.find()) {
       System.out.println(matcher.group(2));
     }

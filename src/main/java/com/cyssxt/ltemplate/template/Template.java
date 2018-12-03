@@ -26,4 +26,6 @@ public interface Template {
 
   String getKeyValue(Object value);
 
+  String getContent();
+
 }

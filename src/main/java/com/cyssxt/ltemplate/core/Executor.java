@@ -9,5 +9,4 @@ public interface Executor {
 
   String execute(Template template, List<Rule> rules);
 
-  Executor getInstance();
 }
