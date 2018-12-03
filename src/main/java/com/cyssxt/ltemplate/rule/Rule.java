@@ -1,6 +1,6 @@
 package com.cyssxt.ltemplate.rule;
 
-import com.cyssxt.ltemplate.core.Template;
+import com.cyssxt.ltemplate.template.Template;
 import com.cyssxt.ltemplate.expression.Expression;
 
 import java.util.regex.Pattern;
