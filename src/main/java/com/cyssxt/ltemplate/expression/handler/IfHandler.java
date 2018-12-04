@@ -9,9 +9,14 @@ import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class IfHandler implements Handler<IfInfo>{
+public class IfHandler extends DefaultHandler<IfInfo>{
 
   private final static Pattern REG = Pattern.compile("([a-zA-z_0-9]+)");
+
+  @Override
+  public String onNull() {
+    return null;
+  }
 
   @Override
   public Result render(IfInfo o, Map params) {

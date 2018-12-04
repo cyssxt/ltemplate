@@ -22,15 +22,15 @@ public class DefaultTemplate implements Template {
 
   @Override
   public List<Expression> list(List<Rule> rules) {
-    List<Expression> expressions = new ArrayList<>();
+    List<Expression> results = new ArrayList<>();
     for(Rule rule:rules){
-      Expression expression = rule.calc(this);
-      if(expression==null){
+      List<Expression> expressions = rule.calc(this);
+      if(expressions==null || expressions.size()==0){
         continue;
       }
-      expressions.add(expression);
+      results.addAll(expressions);
     }
-    return expressions;
+    return results;
   }
 
   @Override

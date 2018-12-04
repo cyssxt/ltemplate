@@ -1,8 +1,10 @@
 package com.cyssxt.ltemplate.rule;
 
+import com.cyssxt.ltemplate.expression.handler.Handler;
 import com.cyssxt.ltemplate.template.Template;
 import com.cyssxt.ltemplate.expression.Expression;
 
+import java.util.List;
 import java.util.regex.Pattern;
 
 public interface Rule {
@@ -18,5 +20,7 @@ public interface Rule {
 
   Pattern getReg();
 
-  Expression calc(Template template);
+  List<Expression> calc(Template template);
+
+  Handler getHandler();
 }

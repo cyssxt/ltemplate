@@ -7,4 +7,8 @@ public interface Handler<T> {
 
   Result render(T t,Map<String,Object> params);
 
+  String parseValue(Object value);
+
+  String onNull();
+
 }
